@@ -40,11 +40,11 @@ for bbox, text, score in text_results:
         cv2.rectangle(img, bbox[0], bbox[0], (250, 255, 155), 2)
         cv2.putText(img, text, bbox[0], cv2.FONT_HERSHEY_COMPLEX, 0.65, (255, 0, 0), 2)
 
-# # Save the processed image with a valid filename
-# output_filename = "detected_text_output.jpg"
-# cv2.imwrite(output_filename, img)
-# print(f"Processed image saved as {output_filename}")
+# Save the processed image with a valid filename
+output_filename = "detected_text_output1.jpg"
+cv2.imwrite(output_filename, img)
+print(f"Processed image saved as {output_filename}")
 
-cv2.imshow("Detected Text", img)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+# cv2.imshow("Detected Text", img)
+# cv2.waitKey(0)
+# cv2.destroyAllWindows()
