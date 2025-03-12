@@ -32,12 +32,12 @@ reader = easyocr.Reader(['en'], gpu=False)
 # Detect text in the image
 text_results = reader.readtext(image_name)
 
-threshold = 0.18
+threshold = 0.4
 for bbox, text, score in text_results:
     if score > threshold:
         print("Detected Text:", text)  # Print detected text
-        bbox = tuple(map(int, bbox[0])), tuple(map(int, bbox[2]))  # Corrected bounding box
-        cv2.rectangle(img, bbox[0], bbox[1], (250, 255, 155), 2)
+        bbox = tuple(map(int, bbox[0])), tuple(map(int, bbox[1]))  # Corrected bounding box
+        cv2.rectangle(img, bbox[0], bbox[0], (250, 255, 155), 2)
         cv2.putText(img, text, bbox[0], cv2.FONT_HERSHEY_COMPLEX, 0.65, (255, 0, 0), 2)
 
 # # Save the processed image with a valid filename
